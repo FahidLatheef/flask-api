@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="p-5 text-center bg-light">
+    <h1 class="mb-3">Change the URL endpoint to change API Results</h1>
+</div>
+
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="p-4 text-start">
+                <h4 class="mb-2">CUSTOMER TABLE APIS</h4>
+            </div>
+            <ul id="customer">
+                <li><a href="/customer/id/4">Customer with ID</a></li>
+                <li><a href="/customer/customer_no/47">Customer with Customer No</a></li>
+                <li><a href="/customer/created_today">Customers Created Today</a></li>
+                <li><a href="/customer/created_last_n_days/2">Customers Created in Last N days</a></li>
+                <li><a href="/customer/last_n_person/4">Last N Customers Created</a></li>
+                <li><a href="/customer/search/dre">Searching Customer's Names</a></li>
+                <li><a href="/customer/full_data">Full Customer Table Data</a></li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <div class="p-4 text-start">
+                <h4 class="mb-2">CARDHOLDER TABLE APIS</h4>
+            </div>
+            <ul id="cardholder">
+                <li><a href="/cardholder/id/4">Cardholder with ID</a></li>
+                <li><a href="/cardholder/real_id/37">Cardholder with Real ID</a></li>
+                <li><a href="/cardholder/created_today">Cardholders Created Today</a></li>
+                <li><a href="/cardholder/created_last_n_days/2">Cardholders Created in Last N days</a></li>
+                <li><a href="/cardholder/last_n_person/4">Last N Cardholders Created</a></li>
+                <li><a href="/cardholder/search/ram">Searching Cardholder's Names</a></li>
+                <li><a href="/cardholder/full_data">Full Cardholder Table Data</a></li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
