@@ -3,8 +3,8 @@ from flask_sqlalchemy import SQLAlchemy
 import datetime
 from flask_restful import Api
 
-path1 = 'sqlite:///' + 'DB1.db'
-path2 = 'sqlite:///' + 'DB2.db'
+path1 = 'sqlite:///' + 'databases/DB1.db'
+path2 = 'sqlite:///' + 'databases/DB2.db'
 
 # print(path1) 
 # print(path2)
