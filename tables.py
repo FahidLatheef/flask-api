@@ -26,6 +26,7 @@ class TABLE1(db.Model):
     status = db.Column(db.String(40), nullable=True, default = "ACTIVE")
     created_at = db.Column(db.DateTime, nullable=False, default=datetime.datetime.now())
     updated_at = db.Column(db.DateTime, nullable=True, onupdate=datetime.datetime.now())
+    gender = db.Column(db.String(20))
 
     def __repr__(self):
         return f"Cardholder Table: {self.fname} {self.lname}"
