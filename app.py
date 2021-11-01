@@ -1,7 +1,7 @@
 from flask import render_template, url_for, redirect
 from tables import api, app
 
-from cardholder import (
+from api_classes.cardholder import (
     CardHolderFilterByID,
     CardHolderFilterByRealID,
     CardHolderFilterByDays,
@@ -11,7 +11,7 @@ from cardholder import (
     CardHolderAll
 )
 
-from customer import (
+from api_classes.customer import (
     CustomerFilterByID,
     CustomerFilterByCustomerNo,
     CustomerFilterByDays,
@@ -21,11 +21,18 @@ from customer import (
     CustomerAll
 )
 
+from api_classes.offer import (
+    OfferFilterByID,
+    OfferFilterByDays,
+    OfferFilterLastN,
+    OfferSearchName,
+    OfferCreatedToday,
+    OfferAll
+)
 
 # Create tables: Run it once
 # db.create_all()
 # db.session.commit()
-
 
 # Cardholder Routes
 api.add_resource(CardHolderFilterByID, "/cardholder/id/<int:cardholder_id>")
@@ -44,6 +51,14 @@ api.add_resource(CustomerFilterLastN, "/customer/last_n_person/<int:last_n_custo
 api.add_resource(CustomerSearchName, "/customer/search/<string:search_name>")
 api.add_resource(CustomerCreatedToday, "/customer/created_today")
 api.add_resource(CustomerAll, "/customer/full_data")
+
+# Offer Routes
+api.add_resource(OfferFilterByID, "/offer/id/<int:cardholder_id>")
+api.add_resource(OfferFilterByDays, "/offer/created_last_n_days/<int:days>")
+api.add_resource(OfferFilterLastN, "/offer/last_n_person/<int:last_n_holder>")
+api.add_resource(OfferSearchName, "/offer/search/<string:search_name>")
+api.add_resource(OfferCreatedToday, "/offer/created_today")
+api.add_resource(OfferAll, "/offer/full_data")
 
 @app.route('/')
 def index():
