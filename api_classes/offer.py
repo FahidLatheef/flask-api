@@ -1,43 +1,30 @@
 import datetime
-from flask_restful import Resource, fields, marshal_with, abort
+from flask_restx import Resource, fields, marshal_with, abort
 from tables import TABLE1
 
-# TABLE 1 Marshall Structure
+# OFFER MARSHALL STRUCTURE
 
-resource_fields_table1 = {
+resource_fields_offer = {
     'id': fields.Integer,
     'fname': fields.String,
     'lname': fields.String,
-    'real_id': fields.Integer,
-    'status': fields.String,
-    'created_at': fields.DateTime,
-    'updated_at': fields.DateTime,
-    'gender': fields.String,
+    'gender':fields.String,
+    'customer.offer': fields.Integer,
 }
 
-# Cardholder table1 Classes
+# Offer Classes
 
-
-class CardHolderFilterByID(Resource):
-    @marshal_with(resource_fields_table1)
+class OfferFilterByID(Resource):
+    @marshal_with(resource_fields_offer)
     def get(self, cardholder_id):
         result = TABLE1.query.filter_by(id=cardholder_id).first()
         if not result:
-            abort(404, message=f"Could not find CardHolder with id: {cardholder_id}")
+            abort(404, message=f"Could not find Cardholder with id: {cardholder_id}")
         return result
 
 
-class CardHolderFilterByRealID(Resource):
-    @marshal_with(resource_fields_table1)
-    def get(self, cardholder_real_id):
-        result = TABLE1.query.filter_by(real_id=cardholder_real_id).first()
-        if not result:
-            abort(404, message=f"Could not find CardHolder with real_id: {cardholder_real_id}")
-        return result
-
-
-class CardHolderFilterByDays(Resource):
-    @marshal_with(resource_fields_table1)
+class OfferFilterByDays(Resource):
+    @marshal_with(resource_fields_offer)
     def get(self, days):
         end = datetime.date.today()
         start = end - datetime.timedelta(days=days)
@@ -47,8 +34,8 @@ class CardHolderFilterByDays(Resource):
         return results
 
 
-class CardHolderFilterLastN(Resource):
-    @marshal_with(resource_fields_table1)
+class OfferFilterLastN(Resource):
+    @marshal_with(resource_fields_offer)
     def get(self, last_n_holder):
         results = TABLE1.query.filter(TABLE1.id).order_by(TABLE1.id.desc()).limit(last_n_holder).all()
         if not results:
@@ -56,8 +43,8 @@ class CardHolderFilterLastN(Resource):
         return results
 
 
-class CardHolderSearchName(Resource):
-    @marshal_with(resource_fields_table1)
+class OfferSearchName(Resource):
+    @marshal_with(resource_fields_offer)
     def get(self, search_name):
         results = TABLE1.query.filter(TABLE1.fname.like(f'%{search_name}%') | TABLE1.lname.like(f'%{search_name}%')).all()
         if not results:
@@ -65,8 +52,8 @@ class CardHolderSearchName(Resource):
         return results
 
 
-class CardHolderCreatedToday(Resource):
-    @marshal_with(resource_fields_table1)
+class OfferCreatedToday(Resource):
+    @marshal_with(resource_fields_offer)
     def get(self):
         today = datetime.date.today()
         results = TABLE1.query.filter(TABLE1.created_at >= today).all()
@@ -75,8 +62,8 @@ class CardHolderCreatedToday(Resource):
         return results
 
 
-class CardHolderAll(Resource):
-    @marshal_with(resource_fields_table1)
+class OfferAll(Resource):
+    @marshal_with(resource_fields_offer)
     def get(self):
         results = TABLE1.query.order_by(TABLE1.id.desc()).all()
         if not results:

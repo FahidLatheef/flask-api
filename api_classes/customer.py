@@ -1,5 +1,5 @@
 import datetime
-from flask_restful import Resource, fields, marshal_with, abort
+from flask_restx import Resource, fields, marshal_with, abort
 from tables import TABLE2
 
 
