@@ -2,12 +2,29 @@
 
 {% block content %}
 
-<div class="p-5 text-center bg-light">
-    <h1 class="mb-3">Change the URL endpoint to change API Results</h1>
+<div class="p-5 text-center">
+    <h1 class="mb-1">Change the URL endpoint to change API Results</h1>
+    <hr>
 </div>
 
-
 <div class="container">
+    <div class="row">
+        <div class="mx-auto">
+            <div class="p-4">
+                <h4 class="mb-2">OFFER APIS</h4>
+            </div>
+            <ul id="offer">
+                <li><a href="/api/offer/id/4">Offer Details with ID</a></li>
+                <li><a href="/api/offer/created_today">Offer Details for Cardholders Created Today</a></li>
+                <li><a href="/api/offer/created_last_n_days/7">Offer Details for Cardholders Created in Last N days</a>
+                </li>
+                <li><a href="/api/offer/last_n_person/4">Offer Details for Last N Created Cardholders</a></li>
+                <li><a href="/api/offer/search/dre">Offer Details by Searching part of the name</a></li>
+                <li><a href="/api/offer/full_data">Full Offer Details API</a></li>
+            </ul>
+        </div>
+    </div>
+    <hr>
 
     <div class="row">
         <div class="col-md-6">
@@ -15,13 +32,13 @@
                 <h4 class="mb-2">CUSTOMER TABLE APIS</h4>
             </div>
             <ul id="customer">
-                <li><a href="/customer/id/4">Customer with ID</a></li>
-                <li><a href="/customer/customer_no/47">Customer with Customer No</a></li>
-                <li><a href="/customer/created_today">Customers Created Today</a></li>
-                <li><a href="/customer/created_last_n_days/2">Customers Created in Last N days</a></li>
-                <li><a href="/customer/last_n_person/4">Last N Customers Created</a></li>
-                <li><a href="/customer/search/dre">Searching Customer's Names</a></li>
-                <li><a href="/customer/full_data">Full Customer Table Data</a></li>
+                <li><a href="/api/customer/id/4">Customer with ID</a></li>
+                <li><a href="/api/customer/customer_no/47">Customer with Customer No</a></li>
+                <li><a href="/api/customer/created_today">Customers Created Today</a></li>
+                <li><a href="/api/customer/created_last_n_days/6">Customers Created in Last N days</a></li>
+                <li><a href="/api/customer/last_n_person/4">Last N Customers Created</a></li>
+                <li><a href="/api/customer/search/dre">Searching Customer's Names</a></li>
+                <li><a href="/api/customer/full_data">Full Customer Table Data</a></li>
             </ul>
         </div>
         <div class="col-md-6">
@@ -29,17 +46,22 @@
                 <h4 class="mb-2">CARDHOLDER TABLE APIS</h4>
             </div>
             <ul id="cardholder">
-                <li><a href="/cardholder/id/4">Cardholder with ID</a></li>
-                <li><a href="/cardholder/real_id/37">Cardholder with Real ID</a></li>
-                <li><a href="/cardholder/created_today">Cardholders Created Today</a></li>
-                <li><a href="/cardholder/created_last_n_days/2">Cardholders Created in Last N days</a></li>
-                <li><a href="/cardholder/last_n_person/4">Last N Cardholders Created</a></li>
-                <li><a href="/cardholder/search/ram">Searching Cardholder's Names</a></li>
-                <li><a href="/cardholder/full_data">Full Cardholder Table Data</a></li>
+                <li><a href="/api/cardholder/id/4">Cardholder with ID</a></li>
+                <li><a href="/api/cardholder/real_id/37">Cardholder with Real ID</a></li>
+                <li><a href="/api/cardholder/created_today">Cardholders Created Today</a></li>
+                <li><a href="/api/cardholder/created_last_n_days/5">Cardholders Created in Last N days</a></li>
+                <li><a href="/api/cardholder/last_n_person/4">Last N Cardholders Created</a></li>
+                <li><a href="/api/cardholder/search/ram">Searching Cardholder's Names</a></li>
+                <li><a href="/api/cardholder/full_data">Full Cardholder Table Data</a></li>
             </ul>
 
         </div>
     </div>
+    <hr>
+</div>
+
+<div class="p-5 text-center">
+    <a href="/api/docs" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Swagger API Interface</a>
 </div>
 
 {% endblock content %}
