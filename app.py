@@ -1,4 +1,4 @@
-from flask import render_template, url_for, redirect
+from flask import render_template, redirect
 from tables import api, app
 
 from api_classes.cardholder import (
