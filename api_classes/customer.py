@@ -2,19 +2,8 @@ import datetime
 from flask_restx import Resource, abort
 import pandas as pd
 import json
+from tables import df2 as df  # Importing table2 dataframe as df
 
-# df is table2
-df = pd.read_csv("databases/table2.csv")
-
-# Function to convert time string to datetime format
-def date_convert(date_to_convert):
-    try:
-        return datetime.datetime.strptime(str(date_to_convert), f'%Y-%m-%d %X.%f')
-    except:
-        return float('nan')
-# Converting time string to datetime format
-df['created_at'] = df['created_at'].apply(date_convert)
-df['updated_at'] = df['updated_at'].apply(date_convert)
 
 # Customer Classes
 
