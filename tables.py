@@ -1,14 +1,17 @@
-from flask import Flask, Blueprint
-from flask_restx import Api
+from sanic import Sanic  
+from sanic_restful_api import Api
+from sanic_openapi import openapi2_blueprint
+from sanic_session import Session, InMemorySessionInterface
+from sanic_jinja2 import SanicJinja2
 import pandas as pd
 import datetime
 
-
-app = Flask(__name__)
-
-blueprint = Blueprint('api', __name__, url_prefix='/api')
-api = Api(blueprint, doc='/docs/')
-app.register_blueprint(blueprint)
+# Initializing Sanic App
+app = Sanic(__name__)
+app.blueprint(openapi2_blueprint)
+session = Session(app, interface=InMemorySessionInterface())
+jinja = SanicJinja2(app, session=session)
+api = Api(app)
 
 # df1 is table1 and df2 is table2
 df1 = pd.read_csv("databases/table1.csv")
