@@ -3,8 +3,8 @@ from sanic.views import HTTPMethodView
 from sanic_restful_api import abort
 import pandas as pd
 import json
-from tables import df1, df2
 from sanic.response import json as sanic_json
+from tables import df1, df2
 
 # Merging df1 and df2 to df
 df = pd.merge(left=df1, right=df2[['customer_no', 'offer']], left_on='real_id', right_on='customer_no')
