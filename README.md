@@ -1,5 +1,5 @@
-# flask-api
-Flask-API using flask-restx
+# Sanic-api
+Restful-API using Sanic
 
 ## Setup
 
