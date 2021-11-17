@@ -1,6 +1,6 @@
 from sanic import Sanic  
 from sanic_restful_api import Api
-from sanic_openapi import openapi2_blueprint
+from sanic_openapi import openapi3_blueprint
 from sanic_session import Session, InMemorySessionInterface
 from sanic_jinja2 import SanicJinja2
 import pandas as pd
@@ -8,7 +8,7 @@ import datetime
 
 # Initializing Sanic App
 app = Sanic(__name__)
-app.blueprint(openapi2_blueprint)
+app.blueprint(openapi3_blueprint)
 session = Session(app, interface=InMemorySessionInterface())
 jinja = SanicJinja2(app, session=session)
 api = Api(app)
