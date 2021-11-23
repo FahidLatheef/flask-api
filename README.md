@@ -1,5 +1,5 @@
 # Sanic-api
-Restful-API using Sanic
+Restful-API using fastapi
 
 ## Setup
 
@@ -58,7 +58,7 @@ pip install -r requirements.txt
 ```
 ## Running the app at localhost
 ```
-python app.py
+uvicorn main:app --reload
 ```
 
 And then go to http://127.0.0.1:8000/

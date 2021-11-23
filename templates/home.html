@@ -14,12 +14,12 @@
                 <h4 class="mb-2">OFFER APIS</h4>
             </div>
             <ul id="offer">
-                <li><a href="/offer/id/4">Offer Details with Cardholder Table ID</a></li>
-                <li><a href="/offer/created_today">Offer Details for Cardholders Created Today</a></li>
-                <li><a href="/offer/created_last_n_days/23">Offer Details for Cardholders Created in Last N days</a>
+                <li><a href="/offer/cardholder_id/4">Offer Details with Cardholder Table ID</a></li>
+                <li><a href="/offer/today">Offer Details for Cardholders Created Today</a></li>
+                <li><a href="/offer/days/35">Offer Details for Cardholders Created in Last N days</a>
                 </li>
-                <li><a href="/offer/last_n_person/4">Offer Details for Last N Created Cardholders</a></li>
-                <li><a href="/offer/search/dre">Offer Details by Searching part of the name</a></li>
+                <li><a href="/offer/last_n_user/4">Offer Details for Last N Created Cardholders</a></li>
+                <li><a href="/offer/search_name/dre">Offer Details by Searching part of the name</a></li>
                 <li><a href="/offer/full_data">Full Offer Details API</a></li>
             </ul>
         </div>
@@ -34,10 +34,10 @@
             <ul id="customer">
                 <li><a href="/customer/id/4">Customer with ID</a></li>
                 <li><a href="/customer/customer_no/47">Customer with Customer No</a></li>
-                <li><a href="/customer/created_today">Customers Created Today</a></li>
-                <li><a href="/customer/created_last_n_days/26">Customers Created in Last N days</a></li>
-                <li><a href="/customer/last_n_person/4">Last N Customers Created</a></li>
-                <li><a href="/customer/search/dre">Searching Customer's Names</a></li>
+                <li><a href="/customer/today">Customers Created Today</a></li>
+                <li><a href="/customer/days/26">Customers Created in Last N days</a></li>
+                <li><a href="/customer/last_n_user/4">Last N Customers Created</a></li>
+                <li><a href="/customer/search_name/dre">Searching Customer's Names</a></li>
                 <li><a href="/customer/full_data">Full Customer Table Data</a></li>
             </ul>
         </div>
@@ -48,10 +48,10 @@
             <ul id="cardholder">
                 <li><a href="/cardholder/id/4">Cardholder with ID</a></li>
                 <li><a href="/cardholder/real_id/37">Cardholder with Real ID</a></li>
-                <li><a href="/cardholder/created_today">Cardholders Created Today</a></li>
-                <li><a href="/cardholder/created_last_n_days/25">Cardholders Created in Last N days</a></li>
-                <li><a href="/cardholder/last_n_person/4">Last N Cardholders Created</a></li>
-                <li><a href="/cardholder/search/ram">Searching Cardholder's Names</a></li>
+                <li><a href="/cardholder/today">Cardholders Created Today</a></li>
+                <li><a href="/cardholder/days/25">Cardholders Created in Last N days</a></li>
+                <li><a href="/cardholder/last_n_user/4">Last N Cardholders Created</a></li>
+                <li><a href="/cardholder/search_name/ram">Searching Cardholder's Names</a></li>
                 <li><a href="/cardholder/full_data">Full Cardholder Table Data</a></li>
             </ul>
 
@@ -61,7 +61,11 @@
 </div>
 
 <div class="p-5 text-center">
-    <a href="/swagger" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Swagger API Interface</a>
+    <a href="/docs" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Swagger (OpenAPI) API Interface</a>
+</div>
+
+<div class="p-5 text-center">
+    <a href="/redoc" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Redoc API Interface</a>
 </div>
 
 {% endblock content %}
