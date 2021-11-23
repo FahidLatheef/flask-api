@@ -1,4 +1,4 @@
-# Sanic-api
+# fastapi
 Restful-API using fastapi
 
 ## Setup
